@@ -1,0 +1,14 @@
+# Imagem base Nodejs e Alpine
+FROM node:19-alpine3.16
+
+# Definir o diretório de trabalho
+WORKDIR /usr/src/app
+
+#COPIAR o arquivo index.js para o diretório de trabalho WORKDIR
+COPY . .
+
+# Instalar dependências
+RUN npm install
+
+# Expor porta 3000 internamente
+EXPOSE 3000
